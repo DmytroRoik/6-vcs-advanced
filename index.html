@@ -2,18 +2,53 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Some document</title>
+	<title>Document</title>
+	
 </head>
-<body>
-	<img src="https://media.giphy.com/media/10B1POqoY9kOME/giphy.gif" alt="">
-	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam ut libero doloremque aut placeat maiores omnis molestias iste reprehenderit dolorum, ad eaque dolor ea consequuntur cum, aperiam delectus quam enim?</p>
+<body >
+	<div id="forms">
 	<form >
 		<label for="login">Login: </label>
 		<input type="text" id="login"><br>
 		<label for="password">Password: </label>
 		<input type="password" id="password" ><br>
-		<input type="submit" value="Send">
+		<input type="submit" value="Send" onclick="SendData()">
 	</form>
-	<script src="assets/all.js"></script>
+	</div>
+	
 </body>
 </html>
+<script>
+		function SendData () {
+			var log = document.getElementById("login");
+			alert("hello, "+log.value+" !");
+		}
+	</script>
+<style>
+	body{
+		background-image: url(https://c1.staticflickr.com/2/1520/24330829813_944c817720_b.jpg);
+		-webkit-background-size: cover;
+		background-size: cover;
+	}
+	
+	 form{
+	 	display: inline-block;
+		text-align: center;
+		margin:15% 45%;
+		color: white;
+		font-size: 20px;
+		border-radius: 10px;
+		background-color: rgba(66, 185, 244,.3);
+	}
+	form input,form label {
+		min-height: 25px;
+		min-width: 200px;
+		text-align: center;
+		border-radius: 10px;
+		margin: 10px 15px;
+	}	
+	form input:last-child{
+		min-width: 100px;
+	}
+
+</style>
