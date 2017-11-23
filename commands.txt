@@ -1,0 +1,65 @@
+1)
+mkdir VCS_Advanced
+cd VCS_Advanced/
+git init
+git checkout -b architecture
+mkdir assets uploads
+touch index.html
+touch uploads/.gitkeep
+git add .
+git commit -am 'init'
+touch assets/all.js assets/css.js
+git add assets/*.js
+git commit -m 'added all.js and css.js'
+git remote add origin git@github.com:DmytroRoik/6-vcs-advanced.git
+git push -u origin architecture
+touch .gitignore
+git checkout -b master
+git merge architecture
+git branch -d architecture
+2)
+git branch newBranch
+git add index.html
+git commit -m 'add head to index.html'
+git add .
+git commit -m 'add some picture to index.html'
+git checkout newBranch
+git rebase master
+git add index.html
+git commit -m 'add tag p with lorem and script to index.html'
+git add assets/*.js
+git commit -m 'add func alert to all.js'
+git checkout master
+git merge newBranch
+git branch -d newBranch
+3)
+git add index.html
+git commit -m 'add authorization form to index.html'
+git add index.html
+git commit -m 'add script to index.html'
+git tag v.0.1
+git push origin v.0.1 master
+4)
+git submodule add https://github.com/DmytroRoik/hello-world-git.git
+git commit -m 'submodule included'
+git push origin master
+5)
+git checkout -b gh-pages
+git add index.html
+git commit -m 'rewrited index.html'
+git push origin gh-pages
+
+6)
+git checkout -b branch
+touch file.txt
+git add file.txt
+git commit -m 'rewrite file.txt in branch with another text'
+
+git checkout master
+touch file.txt
+git add file.txt
+git commit -m 'rewrite file.txt in master with some text'
+git merge branch
+git mergetool
+git commit -m 'merged file.txt'
+git push origin master
